@@ -1,5 +1,6 @@
 import tensorflow as tf
 import tensorflow_hub as hub
+import tensorflow_text
 
 from sentence_use.models import USE
 
