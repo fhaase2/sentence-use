@@ -35,7 +35,7 @@ train_args.add_argument(
     "--lr",
     dest="lr",
     action="store",
-    default=0.001,
+    default=0.0001,
     type=float,
     help="Learning rate")
 
