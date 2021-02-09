@@ -1,6 +1,6 @@
 # Sentence-USE: Universal Sentence Encoder with Siamese Architecture
 
-# Train and evaluate on STSb benchmark
+# Train and evaluate on STSb dataset
 
 ## Download STSb dataset
 
@@ -10,7 +10,7 @@ To download and prepare the STSb dataset, run the following script:
 python sentence_use/data/stsb.py
 ```
 
-It will download the train, dev and test datasets into the `sentence_use/data` subdirectory.
+It will download the train, dev and test datasets.
 
 ## Evaluate
 
@@ -21,7 +21,7 @@ python evaluate.py --eval-data=stsb_test.csv \
                     --model-name-or-path=https://tfhub.dev/google/universal-sentence-encoder/4
 ```
 
-It should output something similar:
+It should output the evaluation metrics:
 
 ```
 Pearsons correlation: 0.7873, Spearman`s rank correlation: 0.7709,
@@ -35,7 +35,7 @@ Expects a training and validation dataset. Dataset needs to be provided as csv f
 python train.py --train-data=stsb_train.csv \
                 --val-data=stsb_dev.csv \
                 --model-name-or-path=https://tfhub.dev/google/universal-sentence-encoder/4 \
-                --lr=0.001 \
+                --lr=0.0001 \
                 --epochs=1 \
                 --batch-size=8
 ```
@@ -49,4 +49,10 @@ To run the evaluation again after the training, run the evaluate script again an
 ```
 python evaluate.py --eval-data=stsb_test.csv \
                    --model-name-or-path=savedmodel
+```
+
+Output:
+
+```
+Pearsons correlation: 0.8042, Spearman`s rank correlation: 0.7915
 ```
