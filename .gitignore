@@ -133,3 +133,4 @@ dmypy.json
 *.tar.gz
 *.h5
 /logs
+/savedmodel
