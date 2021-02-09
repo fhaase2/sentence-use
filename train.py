@@ -13,8 +13,12 @@ def train(args):
     """
     tf.random.set_seed(args.seed)
 
+    # x_train and x_val format is [("sentence1", "sentence2")]
+    # y_train and y_val format is [0.95]
     x_train, y_train = read_data(args.train_data)
     x_val, y_val = read_data(args.val_data)
+
+    # Prepare train and val datasets as tf.data.Dataset
     train_dataset = tf.data.Dataset.from_tensor_slices((x_train, y_train))
     train_dataset = train_dataset.shuffle(len(x_train), seed=args.seed).batch(args.batch_size)
     val_dataset = tf.data.Dataset.from_tensor_slices((x_val, y_val))
@@ -46,5 +50,4 @@ def train(args):
 
 if __name__ == "__main__":
     args = train_args.parse_args()
-    print(type(args))
     train(args)
