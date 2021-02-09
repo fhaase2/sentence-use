@@ -1,15 +1,20 @@
 import logging
 
 import tensorflow as tf
-from sklearn.metrics.pairwise import paired_cosine_distances
 from scipy.stats import pearsonr, spearmanr
+from sklearn.metrics.pairwise import paired_cosine_distances
 
-from sentence_use.parser import eval_args
-from sentence_use.models import SiameseUSE
 from sentence_use.data import read_data
+from sentence_use.models import SiameseUSE
+from sentence_use.parser import eval_args
 
 
 def evaluate(args):
+    """Runs evaluation script for given CLI arguments.
+
+    :param args: Arguments
+    :type args: argparse.Namespace
+    """
     tf.random.set_seed(args.seed)
 
     x_test, y_test = read_data(args.eval_data)

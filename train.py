@@ -1,13 +1,16 @@
-import os
-
 import tensorflow as tf
 
-from sentence_use.parser import train_args
-from sentence_use.models import SiameseUSE
 from sentence_use.data import read_data
+from sentence_use.models import SiameseUSE
+from sentence_use.parser import train_args
 
 
 def train(args):
+    """Runs training script for given CLI arguments.
+
+    :param args: Arguments
+    :type args: argparse.Namespace
+    """
     tf.random.set_seed(args.seed)
 
     x_train, y_train = read_data(args.train_data)
@@ -43,4 +46,5 @@ def train(args):
 
 if __name__ == "__main__":
     args = train_args.parse_args()
+    print(type(args))
     train(args)

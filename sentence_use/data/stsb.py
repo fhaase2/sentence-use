@@ -1,8 +1,8 @@
-import csv
-import tarfile
-import os
 import codecs
+import csv
+import os
 import pathlib
+import tarfile
 import urllib.request
 
 
