@@ -2,6 +2,12 @@ import csv
 
 
 def read_data(path):
+    """Reads csv dataset and returns in the correct format.
+
+    :param path: Path of file.
+    :type path: str
+    :rtype: tuple
+    """
     with open(path) as csvfile:
         reader = csv.DictReader(csvfile)
         sentences = []

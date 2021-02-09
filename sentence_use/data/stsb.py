@@ -7,6 +7,12 @@ import urllib.request
 
 
 def download_stsb(dataset_path=""):
+    """Downloads STSb dataset and saves as train, dev and
+    test datasets.
+
+    :param dataset_path: Output path, defaults to ""
+    :type dataset_path: str, optional
+    """
     stsb_dataset_path = os.path.join(dataset_path, "stsb.tar.gz")
     csv_fieldnames = ["sect", "dataset", "year", "id", "score", "sentence1", "sentence2"]
     url = "http://ixa2.si.ehu.es/stswiki/images/4/48/Stsbenchmark.tar.gz"
