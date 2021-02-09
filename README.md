@@ -1,5 +1,7 @@
 # Sentence-USE: Universal Sentence Encoder with Siamese Architecture
 
+This repository contains scripts to finetune the USE for a given semantic textual similarity dataset.
+
 # Train and evaluate on STSb dataset
 
 ## Download STSb dataset
@@ -56,3 +58,8 @@ Output:
 ```
 Pearsons correlation: 0.8042, Spearman`s rank correlation: 0.7915
 ```
+
+# References
+
+- Yang, Y., Cer, D., Ahmad, A., Guo, M., Law, J., Constant, N., ... & Kurzweil, R. (2019). Multilingual universal sentence encoder for semantic retrieval. arXiv preprint arXiv:1907.04307.
+- Cer, D., Yang, Y., Kong, S. Y., Hua, N., Limtiaco, N., John, R. S., ... & Kurzweil, R. (2018). Universal sentence encoder. arXiv preprint arXiv:1803.11175.
