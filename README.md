@@ -29,7 +29,7 @@ Pearsons correlation: 0.7873, Spearman`s rank correlation: 0.7709,
 
 ## Run training
 
-Expects a training and validation dataset. Dataset needs to be provided as csv file with `score`, `sentence1` and `sentence2` columns. Scores must be in range [0, 1].
+Expects a training and validation dataset. Dataset needs to be provided as csv file with `score`, `sentence1` and `sentence2` columns. Scores must be in range `[0, 1]`.
 
 ```
 python train.py --train-data=stsb_train.csv \
