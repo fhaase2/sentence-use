@@ -1,3 +1,5 @@
+import logging
+
 import tensorflow as tf
 
 from sentence_use.data import read_data
@@ -49,5 +51,6 @@ def train(args):
 
 
 if __name__ == "__main__":
+    logging.getLogger().setLevel(logging.INFO)
     args = train_args.parse_args()
     train(args)
